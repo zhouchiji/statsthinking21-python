@@ -7,9 +7,9 @@
 #       extension: .py
 #       format_name: percent
 #       format_version: '1.3'
-#       jupytext_version: 1.4.2
+#       jupytext_version: 1.16.1
 #   kernelspec:
-#     display_name: Python 3
+#     display_name: Python 3 (ipykernel)
 #     language: python
 #     name: python3
 # ---
@@ -188,7 +188,7 @@ import pandas as pd  ## RP: pd is more common abbreviation
 # %% [markdown]
 # After importing a library, you can now access all of its features using the specified prefix. If you want to learn more about a library's features, you can find them using the ``help()`` function:
 
-# %% tags=[]
+# %%
 help(np.zeros)
 
 # %% [markdown]
