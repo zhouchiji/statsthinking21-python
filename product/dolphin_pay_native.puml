@@ -20,16 +20,18 @@ alt 用户正确输入密码
     USER -> PAY: 4.用户确认支付，输入密码
     activate USER
     activate PAY
-    PAY --> CHECKOUT: 5.返回支付结果
-    PAY --> USER: 5.1 返回支付结果，发送支付订单详情
+    PAY -> PAY: 5.执行支付流程
+    PAY --> CHECKOUT: 5.1 返回支付结果
+    PAY --> USER: 5.2 返回支付结果，发送支付订单详情
     deactivate PAY
     deactivate USER
 else 用户密码错误
     USER -> PAY: 4 输入密码
     activate USER
     activate PAY
-    PAY --> CHECKOUT: 5.密码错误，等待重试
-    PAY --> USER: 5.1 展示密码错误，需要重新输入密码
+    PAY -> PAY: 5.执行支付流程
+    PAY --> CHECKOUT: 5.1 密码错误，等待重试
+    PAY --> USER: 5.2 展示密码错误，需要重新输入密码
     deactivate PAY
     deactivate USER
 else 用户取消操作
