@@ -1,0 +1,11 @@
+@startuml
+entity      门店收银台       as CHECKOUT
+entity      DolphinPay支付系统       as PAY
+
+activate CHECKOUT
+activate PAY
+CHECKOUT -> PAY: 1. 根据订单id(orderId)发起订单查询
+PAY --> CHECKOUT: 订单信息，包含订单金额，订单状态等
+deactivate PAY
+deactivate CHECKOUT
+@enduml
