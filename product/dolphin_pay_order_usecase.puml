@@ -1,0 +1,18 @@
+@startuml
+left to right direction
+actor 顾客 as g
+actor 收银员 as c
+  
+
+package DolphinPay {
+  usecase "展示付款码" as UC1
+  usecase "扫码" as UC2
+  usecase "输入密码(若需要)" as UC3
+  usecase "支付完成，打印小票" as UC4
+}
+
+g --> UC1
+g --> UC3
+c --> UC2
+c --> UC4
+@enduml

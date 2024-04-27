@@ -1,0 +1,40 @@
+@startuml
+interface       CommonPayBizService {
+    +String preOrder(PayRequest)
+    +PayResponse pay(PayRequest)
+    +PayResponse refund(RefundRequest)
+    +PayResponse partRefund(RefundRequest)
+    +PayResponse hybirdPay(PayRequest)
+}
+abstract        CommonPayBizAbstractService {
+    +String preOrder(PayRequest)
+    +PayResponse pay(PayRequest)
+    +PayResponse refund(RefundRequest)
+    +PayResponse partRefund(RefundRequest)
+    +PayResponse hybirdPay(PayRequest)
+}
+class           AlipayBizServiceImpl {
+    +PayResponse pay(PayRequest)
+    +PayResponse refund(RefundRequest)
+    +PayResponse partRefund(RefundRequest)
+}
+class           WechatPayBizServiceImpl {
+    +PayResponse pay(PayRequest)
+    +PayResponse refund(RefundRequest)
+    +PayResponse partRefund(RefundRequest)
+}
+class           UnionPayBizServiceImpl {
+    +PayResponse pay(PayRequest)
+    +PayResponse refund(RefundRequest)
+    +PayResponse partRefund(RefundRequest)
+}
+class           MemberPayBizServiceImpl{
+    +PayResponse hybirdPay(PayRequest)
+}
+
+CommonPayBizService  <|-- CommonPayBizAbstractService
+CommonPayBizAbstractService <|-- WechatPayBizServiceImpl
+CommonPayBizAbstractService <|-- AlipayBizServiceImpl
+CommonPayBizAbstractService <|-- UnionPayBizServiceImpl
+CommonPayBizAbstractService <|-- MemberPayBizServiceImpl
+@enduml
